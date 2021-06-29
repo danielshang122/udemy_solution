@@ -18,7 +18,7 @@ public class SentimentAnalyzer {
 				 break;
 			  } 
 		  }   
-		   System.out.println();
+		  
 		   index++;
 		}
 		return featureOpinions;
@@ -62,7 +62,7 @@ public class SentimentAnalyzer {
 			if(negOpinion.equals(word[0])) {
 				//System.out.println(word[0]);
 				return opinion=-1;
-			}
+			}		
 		}
 		}
 		return opinion; 	
@@ -74,16 +74,13 @@ public class SentimentAnalyzer {
 		// Extract sentences as feature might appear multiple times. 
 		// split() takes a regular expression and "." is a special character 
 		// for regular expression. So, escape it to make it work!!
-		if(review.equals("Not only was their food delicious, but I must say that the stars are more for the excellent service!")) {
-			return 1;
-		}
 		String[] sentences = review.split("\\.");
 		int opinion = 0;
 		
 		// your code for processing each sentence. You can return if opinion is found in a sentence (no need to process subsequent ones)		
         for(String sentence:sentences) {
         	if(sentence.contains(feature)) {
-        		String[] words=sentence.toLowerCase().split("\\s|,");
+        		String[] words=sentence.toLowerCase().split("\\s|,|!");
         		for(int i=0;i<words.length;i++) {
         			if(words[i].equals(feature)) {
         				for(String posOpinion:posOpinionWords) {
@@ -109,7 +106,7 @@ public class SentimentAnalyzer {
 	public static void main(String[] args) {
 		//String review = "Haven't been here in years! Fantastic service and the food was delicious! Definetly will be a frequent flyer! Francisco was very attentive";
 		
-		//String review = "Sorry OG, but you just lost some loyal customers. Horrible service, no smile or greeting just attitude. The breadsticks were stale and burnt, appetizer was cold and the food came out before the salad.";
+	    //String review = "Sorry OG, but you just lost some loyal customers. Horrible service, no smile or greeting just attitude. The breadsticks were stale and burnt, appetizer was cold and the food came out before the salad.";
 		String review = "Not only was their food delicious, but I must say that the stars are more for the excellent service!";
 		//String review = "I chose two items from the new menu, the shrimp scampi and shrimp and chicken carbonara, both with my favourite soup and some warm breaksticks. The soup was amazing, as always.";
 		
