@@ -2,6 +2,7 @@ package overridingDemo;
 
 public class User {
    public int id = 1;
+   public String userType ="User";
    
    public void printUserType() {
 	   System.out.println("User");

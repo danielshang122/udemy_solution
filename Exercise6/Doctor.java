@@ -1,4 +1,4 @@
-package Exercise_6;
+package Exercise6;
 
 public class Doctor extends Staff {
 	private long doctorId;

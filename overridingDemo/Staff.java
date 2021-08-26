@@ -8,7 +8,7 @@ public class Staff extends User {
 	}
 	
 	public Staff() {
-	//	userType = "Staff";
+		userType = "Staff";
 	}	 
 	
 	public void printUserType() {
